@@ -25,8 +25,8 @@
 　など...
 
 
-　日本語
+　日本語　→　
 　https://uchida16104.github.io/todolist/todolist_japanese.html
 
-　英語
+　英語　→　
 　https://uchida16104.github.io/todolist/todolist_english.html
