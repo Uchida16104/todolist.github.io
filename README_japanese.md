@@ -12,17 +12,17 @@
 
 5. 「背景色の変更」ボタンを押すと入力ダイアログに色を入力し、背景色を変更することができます。
 
-(例1)#ff0000
+　(例1)#ff0000
 
-(例2)linear-gradient(yellowgreen,purple)
+　(例2)linear-gradient(yellowgreen,purple)
 
-(例3)conic-gradient(#ffa500,#00ffff)
+　(例3)conic-gradient(#ffa500,#00ffff)
 
-(例4)radial-gradient(yellow,green)
+　(例4)radial-gradient(yellow,green)
 
-(例5)repeating-linear-gradient(#ff00ff,transparent 5px,#4b0082 10px)
+　(例5)repeating-linear-gradient(#ff00ff,transparent 5px,#4b0082 10px)
 
-など...
+　など...
 
 
 日本語
