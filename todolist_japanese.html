@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>To Do リスト</title>
+<style type = "text/css">
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+h1 {
+  color: #373fff;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  background-color: plum
+}
+
+
+.container {
+  padding: 1em;
+  background: white;
+  opacity: 0.9375;
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+}
+</style>
+<canvas width="100" height="80" style="width: 100px; height: 80px; position: absolute; right: 0px; bottom: 0px;">
+</canvas>
+<div style="position:fixed; right:2px; top:2px; z-index:9999999999; -webkit-user-select: none; cursor:pointer;">
+</div>
+<div style="position:fixed; right:2px; bottom:2px; z-index:9999999999; -webkit-user-select: none; cursor:pointer;">
+</div>
+<style type = "text/css">
+body, html {
+  font-family: helvetica, arial, sans-serif;
+  margin: 10px;
+}
+
+h1 {
+  font-style: italic;
+  color: #ff0066;
+}
+
+button {
+  display: inline-block;
+  font-size: 12px;
+  padding: 7.5px;
+  margin: 7.5px;
+}
+</style>
+<body class="container" id="bg">
+<div data-v-7e2550d6="" class="odm_extension image_downloader_wrapper"><!----></div>
+<header class="header">
+<div class="container">
+<div id="dispArea" class="container">
+<h1 class="title" style="text-align:left;">
+<div style="color:black;font-weight:bold;text-align:left;">
+To do リスト
+<style type = "text/css">
+div.right {
+    text-align: right; 
+}
+</style>
+<div style="text-align:left;float:right;">
+<font size = "3.5" color="black" face = "MS　明朝">
+<script>
+name = window.prompt("氏名を入力してください。\n\n\n", "");
+document.write(name);
+</script>
+用
+</font>
+</div>
+<br>
+<font size = "3.5" color="black" face = "MS　明朝"><div class="right">
+<a href = "./todolist_english.html"><font face = "MS　明朝" size="1" color = "green">英語ページ→
+</a></font></div></font>
+<br>
+<p><font size="2" face="MS 明朝" color="navy">下の入力ボックスにやること(+期限)を入力してください。</font></p>
+<form method="post" style="width:500px;height:100px;font-size:25px;">
+</form>
+<?php
+$sql = "SELECT * FROM Task ORDER BY DESC";
+print $sql;
+?>
+<font><input class="js-addTask-value" type="text"  value="" placeholder="ここに全角22文字以内で入力してください。" style="width:500px;height:100px;font-size:25px;" />
+<button class="js-addTask-trigger" type="button" onclick="effect()">登録</button>
+<style type = "text/css">
+.ex1{
+line-height:0.25;
+}
+.ex2{
+line-height:0.125;
+}
+</style>
+<p><font size="2" face="MS 明朝" color="indigo">やること</font></p>
+<font color="brown"><ul class="todo js-addTask-target"></ul></font>
+<br>
+<b><hr noshade></b>
+<p class = "ex1"><font size="1.5" face="MS 明朝" color="navy"><div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+<a style="cursor:pointer;">▼使い方</a></div></font></p>
+<div id="open" style="display:none;clear:both;">
+<p class = "ex1"><font size="1.5" face="MS 明朝" color="navy">1.「入力」ボタンをクリックすることでBGMが流れます。
+<br>
+同時に「やること」の下に入力したテキストが表示されます。</font></p>
+<p class = "ex1"><font size="1.5" face="MS 明朝" color="navy">2.「削除」ボタンをクリックすることでやることが削除されます。</font></p>
+<br>
+<p class = "ex1"><font size="1.5" face="MS 明朝" color="navy">3.「背景色の変更」ボタンをクリックすることで背景色が変更できます。</font></p>
+<p class = "ex1"><font size="1" face="MS 明朝" color="navy">(例1)#ff0000</font></p>
+<p class = "ex1"><font size="1" face="MS 明朝" color="navy">(例2)linear-gradient(yellowgreen,purple)</font></p>
+<p class = "ex1"><font size="1" face="MS 明朝" color="navy">(例3)conic-gradient(#ffa500,#00ffff)</font></p>
+<p class = "ex1"><font size="1" face="MS 明朝" color="navy">(例4)radial-gradient(yellow,green)</font></p>
+<p class = "ex1"><font size="1" face="MS 明朝" color="navy">(例5)repeating-linear-gradient(#ff00ff,transparent 5px,#4b0082 10px)</font></p>
+<p class = "ex1"><font size="1" face="MS 明朝" color="navy">など...</font></p>
+<br>
+</div>
+<hr>
+<p><font size="1" face="MS　明朝" color="maroon">現在時刻</font></p>
+<p class = "ex2"><font size="0.125" face="MS　明朝" color="maroon">やることの開始時刻と終了時刻を確認するためにお使いいただけます。</font></p>
+<strong style="text-align: right">
+<script type="text/javascript">
+<!--
+function jikoku() {
+dd = new Date();
+document.F1.T1.value = dd.toLocaleString();
+window.setTimeout("jikoku()", 1000);
+}
+// -->
+</script>
+</strong>
+<style>
+body {
+background-color: rgba(255,0,0,0);
+text-align: left;
+}
+li {
+border: 5px solid #000000;
+width: 500px;
+height: 100px;
+word-wrap:break-word;
+}
+button:active {
+background : conic-gradient(pink,orange,yellowgreen,cyan);
+}
+</style>
+</head>
+<body onload="jikoku()">
+<form name="F1" action="#">
+<input type="text" name="T1" size=50>
+</form>
+<form>
+<span style "color: #ff0000">
+<br>
+<br>
+</audio>
+</span>
+</form>
+</div>
+</h1>
+</div>
+<button onclick="chn()"> 背景色の変更 </button>
+<br>
+<audio id="Effect" preload="auto" controls>
+<source src="./effect.wav" type="audio/wav">
+</header>
+<script>
+'use strict';
+const addTaskTrigger = document.getElementsByClassName('js-addTask-trigger')[0];
+const addTaskTarget = document.getElementsByClassName('js-addTask-target')[0];
+const addTaskValue = document.getElementsByClassName('js-addTask-value')[0];
+const removeTask = removeButton => {
+  const targetTask = removeButton.closest('li');
+  addTaskTarget.removeChild(targetTask);
+};
+const addTask = task => {
+  const listItem = document.createElement('li');
+  const removeButton = document.createElement('button');
+  removeButton.innerText = '削除';
+  removeButton.addEventListener('click', () => removeTask(removeButton));
+  listItem.innerText = task;
+  listItem.append(removeButton);
+  addTaskTarget.appendChild(listItem);
+};
+addTaskTrigger.addEventListener('click', event => {
+  const task = addTaskValue.value;
+  addTask(task);
+  addTaskValue.value = '';
+});
+function effect() {
+　　var audio = document.getElementById("Effect").play();
+　　effect.volume = 0.1;
+}
+function chn() {
+var cb = document.getElementById("bg");
+var shift=window.prompt("背景色を入力してください。");
+cb.style.background = shift;
+}
+</script>
+</body>
+</html>
