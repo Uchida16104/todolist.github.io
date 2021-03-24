@@ -25,9 +25,9 @@
 　etc...
 
 
-　English : 
+　English -> 
 　https://uchida16104.github.io/todolist/todolist_english.html
 
-　Japanese : 
+　Japanese -> 
 　https://uchida16104.github.io/todolist/todolist_japanese.html
  
