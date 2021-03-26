@@ -185,10 +185,10 @@ const addTask = task => {
   listItem.innerText = task;
   listItem.append(removeButton);
   addTaskTarget.appendChild(listItem);
+  var key = listItem;
+  var data = localStorage.getItem(key);
+  localStorage.setItem(key, data);
 };
-var key = addTaskTarget;
-var data = localStorage.getItem(key);
-localStorage.setItem(key, data);
 addTaskTrigger.addEventListener('click', event => {
   const task = addTaskValue.value;
   addTask(task);
