@@ -87,7 +87,6 @@ print $sql;
 ?>
 <font><input class="js-addTask-value" type="text"  value="" placeholder="Please enter up to 65 characters here." style="width:350px;height:200px;font-size:16px;" >
 <button class="js-addTask-trigger" type="button" onclick="effect()">Register</button>
-<input type="button" id="save-button" onclick="onSave(this)" value="save">
 <style type = "text/css">
 .ex1{
 line-height:0.25;
@@ -188,18 +187,12 @@ const addTask = task => {
   listItem.innerText = task;
   listItem.append(removeButton);
   addTaskTarget.appendChild(listItem);
-  li.setAttribute('id', 'td');
 };
 addTaskTrigger.addEventListener('click', event => {
   const task = addTaskValue.value;
   addTask(task);
   addTaskValue.value = '';
 });
-function onSave(obj){
-  const todoStr = obj.getAttribute('id');
-  const todolist = document.getElementById('td').innerText;
-  localStorage['todo'] = todolist;
-}
 function effect() {
 　　var audio = document.getElementById("Effect").play();
 　　effect.volume = 0.1;
