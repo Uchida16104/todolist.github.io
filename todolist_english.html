@@ -187,12 +187,18 @@ const addTask = task => {
   listItem.innerText = task;
   listItem.append(removeButton);
   addTaskTarget.appendChild(listItem);
+  listItem.setAttribute('id', 'td');
 };
 addTaskTrigger.addEventListener('click', event => {
   const task = addTaskValue.value;
   addTask(task);
   addTaskValue.value = '';
 });
+function onSave(obj){
+  const todoStr = obj.getAttribute('id');
+  const todolist = document.getElementById('td').innerText;
+  localStorage['todo'] = todolist;
+}
 function effect() {
 　　var audio = document.getElementById("Effect").play();
 　　effect.volume = 0.1;
