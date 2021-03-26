@@ -76,7 +76,14 @@ document.write(name);
 <br>
 <font size = "3.5" color="black" face = "MS　明朝"><div class="right">
 <a href = "./todolist_english.html"><font face = "MS　明朝" size="1" color = "green">英語ページ→
-</a></font></div></font>
+</a>
+<br>
+<p>文字サイズの変更</p>
+<br>
+<button onclick="changeFontSizeSmall()">小</button>
+<button onclick="changeFontSizeMidium()">中</button>
+<button onclick="changeFontSizeLarge()">大</button>
+</font></div></font>
 <br>
 <p><font size="2" face="MS 明朝" color="navy">下の入力ボックスにやること(+期限)を入力してください。</font></p>
 <form method="post" style="width:400px;height:200px;font-size:20px;">
@@ -163,7 +170,7 @@ background : conic-gradient(pink,orange,yellowgreen,cyan);
 </div>
 </h1>
 </div>
-<button onclick="changeBackground()"> 背景色の変更 </button>
+<button onclick="changeBackgroundColor()"> 背景色の変更 </button>
 <br>
 <font color ="navy"><b><a href="https://github.com/Uchida16104/todolist/blob/main/todolist_japanese.html">ソースコード</a></b></font>
 <br>
@@ -195,10 +202,22 @@ function effect() {
 　　var audio = document.getElementById("Effect").play();
 　　effect.volume = 0.1;
 }
-function changeBackground() {
-var cb = document.getElementById("bg");
+function changeBackgroundColor() {
+var cbc = document.getElementById("bg");
 var shift=window.prompt("背景色を入力してください。");
-cb.style.background = shift;
+cbc.style.background = shift;
+}
+function changeFontSizeSmall() {
+var cfss = document.getElementById("bg");
+sfss.style.fontSize = '8px';
+}
+function changeFontSizeMidium() {
+var cfsm = document.getElementById("bg");
+sfsm.style.fontSize = '10px';
+}
+function changeFontSizeLarge() {
+var cfsl = document.getElementById("bg");
+sfsl.style.fontSize = '12px';
 }
 </script>
 </body>
