@@ -10,20 +10,15 @@ body {
   font-family: helvetica, arial, sans-serif;
   margin: 2em;
 }
-
 h1 {
   color: #373fff;
 }
-
 a {
   color: inherit;
 }
-
 a:hover {
   background-color: plum
 }
-
-
 .container {
   padding: 1em;
   background: white;
@@ -45,12 +40,10 @@ body, html {
   font-family: helvetica, arial, sans-serif;
   margin: 10px;
 }
-
 h1 {
   font-style: italic;
   color: #ff0066;
 }
-
 button {
   display: inline-block;
   font-size: 12px;
@@ -131,13 +124,11 @@ At the same time, the text you have entered will appear under "Tasks".</font></p
 <p class = "ex2"><font size="0.125" face="Georgia" color="maroon">You can use it to keep track of the start and finish times of your tasks.</font></p>
 <strong style="text-align: right">
 <script type="text/javascript">
-<!--
 function jikoku() {
 dd = new Date();
 document.F1.T1.value = dd.toLocaleString();
 window.setTimeout("jikoku()", 1000);
 }
-// -->
 </script>
 </strong>
 <style>
@@ -172,7 +163,7 @@ background : conic-gradient(pink,orange,yellowgreen,cyan);
 </div>
 </h1>
 </div>
-<button onclick="chn()"> Change background color </button>
+<button onclick="changeBackground()"> Change background color </button>
 <br>
 <font color ="navy"><b><a href="https://github.com/Uchida16104/todolist/blob/main/todolist_english.html">Source code</a></b></font>
 <br>
@@ -204,7 +195,7 @@ function effect() {
 　　var audio = document.getElementById("Effect").play();
 　　effect.volume = 0.1;
 }
-function chn() {
+function changeBackground() {
 var cb = document.getElementById("bg");
 var shift=window.prompt("Please enter background color.");
 cb.style.background = shift;
