@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset="UTF-8" />
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>To Do リスト</title>
@@ -74,19 +75,6 @@ document.write(name);
 </font>
 </div>
 <br>
-<font size = "3.5" color="black" face = "MS　明朝"><div class="right">
-<a href = "./todolist_english.html"><font face = "MS　明朝" size="1" color = "green">英語ページ→
-</a></font></div></font>
-<br>
-<p><font size="2" face="MS 明朝" color="navy">下の入力ボックスにやること(+期限)を入力してください。</font></p>
-<form method="post" style="width:400px;height:200px;font-size:20px;">
-</form>
-<?php
-$sql = "SELECT * FROM Task ORDER BY DESC";
-print $sql;
-?>
-<font><input class="js-addTask-value" type="text"  value="" placeholder="ここに全角3文字以内で入力してください。" style="width:350px;height:200px;font-size:16px;" />
-<button class="js-addTask-trigger" type="button" onclick="effect()">登録</button>
 <style type = "text/css">
 .ex1{
 line-height:0.25;
@@ -96,7 +84,57 @@ line-height:0.125;
 }
 </style>
 <p><font size="2" face="MS 明朝" color="indigo">やること</font></p>
-<font color="brown"><ul class="todo js-addTask-target"></ul></font>
+  <button id="add">追加</button>
+  <button id="reset">リセット</button>
+  <ul id="foo"></ul>
+  <script>
+  var initData  = ["項目1", "項目2"];
+  var listString = "";
+
+  function initialize(){
+    $.each(initData, function(key, value) {
+      $("#foo").prepend('<li><input type ="text" name ="tasks" style="width:330px;height:190px;font-size:16px;"  placeholder="ここに全角34文字以内で入力してください。" /><button class="delete">削除</button></li>');
+    });
+  }
+
+  if (localStorage.getItem("foo")) {
+    $("#foo").html(localStorage.getItem("foo"));
+  } else {
+    initialize();
+  }
+
+  $("#add").click(function() {
+    $("#foo").prepend('<li><input type ="text" name ="tasks" style="width:330px;height:190px;font-size:16px;"  placeholder="ここに全角34文字以内で入力してください。" /><button class="delete">削除</button></li>');
+    localStorage.setItem("foo", $("#foo").html());
+  });
+
+  $("#foo").on("keyup", ":input", function(){
+    $.each($("input"), function(key, input){
+      $(input).attr("value", $("<div/>").text(input.value).html());
+    });
+    localStorage.setItem("foo", $("#foo").html());
+  });
+
+  $("#foo").on("click", ".delete", function() {
+    $(this).parent().remove();
+    localStorage.setItem("foo", $("#foo").html());
+  });
+
+  $("#reset").click(function(){
+    $("#foo").empty();
+    initialize();
+    localStorage.setItem("foo", $("#foo").html());
+  });
+function effect() {
+　　var audio = document.getElementById("Effect").play();
+　　effect.volume = 0.1;
+}
+function changeBackgroundColor() {
+var cbc = document.getElementById("bg");
+var shift=window.prompt("背景色を入力してください。");
+cbc.style.background = shift;
+}
+  </script>
 <br>
 <b><hr noshade></b>
 <p class = "ex1"><font size="1.5" face="MS 明朝" color="navy"><div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
@@ -138,20 +176,27 @@ body {
 background-color: rgba(255,0,0,0);
 text-align: left;
 }
-li {
+button:active {
+background : conic-gradient(pink,orange,yellowgreen,cyan);
+}
+input[type="text"] {
+border: 5px solid #000000;
+width: 200px;
+height: 100px;
+font-size : 20px;
+word-wrap:break-word;
+}
+input[type="text"] {
 border: 5px solid #000000;
 width: 400px;
 height: 200px;
 word-wrap:break-word;
 }
-button:active {
-background : conic-gradient(pink,orange,yellowgreen,cyan);
-}
 </style>
 </head>
 <body onload="jikoku()">
 <form name="F1" action="#">
-<input type="text" name="T1" size=20>
+<input type="text" name="T1" size=10 style="width:175px; height:25px;">
 </form>
 <form>
 <span style "color: #ff0000">
@@ -170,38 +215,6 @@ background : conic-gradient(pink,orange,yellowgreen,cyan);
 <font color ="navy"><b><a href="https://github.com/Uchida16104/todolist/blob/main/todolist_japanese.html">ソースコード</a></b></font>
 <br>
 </header>
-<script>
-'use strict';
-const addTaskTrigger = document.getElementsByClassName('js-addTask-trigger')[0];
-const addTaskTarget = document.getElementsByClassName('js-addTask-target')[0];
-const addTaskValue = document.getElementsByClassName('js-addTask-value')[0];
-const removeTask = removeButton => {
-  const targetTask = removeButton.closest('li');
-  addTaskTarget.removeChild(targetTask);
-};
-const addTask = task => {
-  const listItem = document.createElement('li');
-  const removeButton = document.createElement('button');
-  removeButton.innerText = '削除';
-  removeButton.addEventListener('click', () => removeTask(removeButton));
-  listItem.innerText = task;
-  listItem.append(removeButton);
-  addTaskTarget.appendChild(listItem);
-};
-addTaskTrigger.addEventListener('click', event => {
-  const task = addTaskValue.value;
-  addTask(task);
-  addTaskValue.value = '';
-});
-function effect() {
-　　var audio = document.getElementById("Effect").play();
-　　effect.volume = 0.1;
-}
-function changeBackgroundColor() {
-var cbc = document.getElementById("bg");
-var shift=window.prompt("背景色を入力してください。");
-cbc.style.background = shift;
-}
-</script>
+</body>
 </body>
 </html>
