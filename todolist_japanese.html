@@ -57,7 +57,7 @@ button {
 <header class="header">
 <div class="container">
 <div id="dispArea" class="container">
-<h1 class="title" style="text-align:left;">
+<h1 class="title" style="text-align:left;" id="fs">
 <div style="color:black;font-weight:bold;text-align:left;">
 To do リスト
 <style type = "text/css">
@@ -66,7 +66,7 @@ div.right {
 }
 </style>
 <div style="text-align:left;float:right;">
-<font size = "3.5" color="black" face = "MS　明朝">
+<font size = "3.5" color="black" face = "MS　明朝" id="fs">
 <script>
 name = window.prompt("氏名を入力してください。\n\n\n", "");
 document.write(name);
@@ -76,17 +76,17 @@ document.write(name);
 </div>
 <br>
 <font size = "3.5" color="black" face = "MS　明朝"><div class="right">
-<a href = "./todolist_english.html"><font face = "MS　明朝" size="1" color = "green">英語ページ→
+<a href = "./todolist_english.html"><font face = "MS　明朝" size="1" color = "green" id="fs">英語ページ→
 </a>
 <br>
-<p>文字サイズの変更</p>
+<p id="fs">文字サイズの変更</p>
 <br>
 <button onclick="changeFontSizeSmall()">小</button>
 <button onclick="changeFontSizeMidium()">中</button>
 <button onclick="changeFontSizeLarge()">大</button>
 </font></div></font>
 <br>
-<p><font size="2" face="MS 明朝" color="navy">下の入力ボックスにやること(+期限)を入力してください。</font></p>
+<p><font size="2" face="MS 明朝" color="navy" id="fs">下の入力ボックスにやること(+期限)を入力してください。</font></p>
 <form method="post" style="width:400px;height:200px;font-size:20px;">
 </form>
 <?php
@@ -103,33 +103,33 @@ line-height:0.25;
 line-height:0.125;
 }
 </style>
-<p><font size="2" face="MS 明朝" color="indigo">やること</font></p>
+<p><font size="2" face="MS 明朝" color="indigo" id="fs">やること</font></p>
 <font color="brown"><ul class="todo js-addTask-target"></ul></font>
 <br>
 <b><hr noshade></b>
 <p class = "ex1"><font size="1.5" face="MS 明朝" color="navy"><div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
-<a style="cursor:pointer;">▼使い方</a></div></font></p>
+<a style="cursor:pointer;" id="fs">▼使い方</a></div></font></p>
 <div id="open" style="display:none;clear:both;">
-<p class = "ex1"><font size="1.5" face="MS 明朝" color="navy">1.「登録」ボタンをクリックすることでBGMが流れます。
+<p class = "ex1"><font size="1.5" face="MS 明朝" color="navy" id="fs">1.「登録」ボタンをクリックすることでBGMが流れます。
 <br>
 同時に「やること」の下に入力したテキストが表示されます。</font></p>
 <br>
-<p class = "ex1"><font size="1.5" face="MS 明朝" color="navy">2.「削除」ボタンをクリックすることでやることが削除されます。</font></p>
+<p class = "ex1"><font size="1.5" face="MS 明朝" color="navy" id="fs">2.「削除」ボタンをクリックすることでやることが削除されます。</font></p>
 <br>
-<p class = "ex1"><font size="1.5" face="MS 明朝" color="navy">3.「背景色の変更」ボタンをクリックすることで背景色が変更できます。</font></p>
-<p class = "ex1"><font size="1" face="MS 明朝" color="navy">(例1)  #ff0000</font></p>
-<p class = "ex1"><font size="1" face="MS 明朝" color="navy">(例2)  linear-gradient(yellowgreen,purple)</font></p>
-<p class = "ex1"><font size="1" face="MS 明朝" color="navy">(例3)  conic-gradient(#ffa500,#00ffff)</font></p>
-<p class = "ex1"><font size="1" face="MS 明朝" color="navy">(例4)  radial-gradient(yellow,green)</font></p>
-<p class = "ex1"><font size="1" face="MS 明朝" color="navy">(例5)  repeating-linear-gradient(#ff00ff,transparent 5px,#4b0082 10px)</font></p>
-<p class = "ex1"><font size="1" face="MS 明朝" color="navy">など...</font></p>
+<p class = "ex1"><font size="1.5" face="MS 明朝" color="navy" id="fs">3.「背景色の変更」ボタンをクリックすることで背景色が変更できます。</font></p>
+<p class = "ex1"><font size="1" face="MS 明朝" color="navy" id="fs">(例1)  #ff0000</font></p>
+<p class = "ex1"><font size="1" face="MS 明朝" color="navy" id="fs">(例2)  linear-gradient(yellowgreen,purple)</font></p>
+<p class = "ex1"><font size="1" face="MS 明朝" color="navy" id="fs">(例3)  conic-gradient(#ffa500,#00ffff)</font></p>
+<p class = "ex1"><font size="1" face="MS 明朝" color="navy" id="fs">(例4)  radial-gradient(yellow,green)</font></p>
+<p class = "ex1"><font size="1" face="MS 明朝" color="navy" id="fs">(例5)  repeating-linear-gradient(#ff00ff,transparent 5px,#4b0082 10px)</font></p>
+<p class = "ex1"><font size="1" face="MS 明朝" color="navy" id="fs">など...</font></p>
 <br>
-<p class = "ex1"><font size="0.5" face="Georgia" color="navy"><a href="https://github.com/Uchida16104/todolist/blob/main/README_japanese.md">詳細→</a></font></p>
+<p class = "ex1"><font size="0.5" face="Georgia" color="navy" id="fs"><a href="https://github.com/Uchida16104/todolist/blob/main/README_japanese.md">詳細→</a></font></p>
 <br>
 </div>
 <hr>
-<p><font size="1" face="MS　明朝" color="maroon">現在時刻</font></p>
-<p class = "ex2"><font size="0.125" face="MS　明朝" color="maroon">やることの開始時刻と終了時刻を確認するためにお使いいただけます。</font></p>
+<p><font size="1" face="MS　明朝" color="maroon" id="fs">現在時刻</font></p>
+<p class = "ex2"><font size="0.125" face="MS　明朝" color="maroon" id="fs">やることの開始時刻と終了時刻を確認するためにお使いいただけます。</font></p>
 <strong style="text-align: right">
 <script type="text/javascript">
 function jikoku() {
@@ -209,15 +209,15 @@ var shift=window.prompt("背景色を入力してください。");
 cbc.style.background = shift;
 }
 function changeFontSizeSmall() {
-var cfss = document.getElementById("bg");
+var cfss = document.getElementById("fs");
 cfss.style.fontSize = '8px';
 }
 function changeFontSizeMidium() {
-var cfsm = document.getElementById("bg");
+var cfsm = document.getElementById("fs");
 cfsm.style.fontSize = '10px';
 }
 function changeFontSizeLarge() {
-var cfsl = document.getElementById("bg");
+var cfsl = document.getElementById("fs");
 cfsl.style.fontSize = '12px';
 }
 </script>
