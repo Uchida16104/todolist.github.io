@@ -10,20 +10,15 @@ body {
   font-family: helvetica, arial, sans-serif;
   margin: 2em;
 }
-
 h1 {
   color: #373fff;
 }
-
 a {
   color: inherit;
 }
-
 a:hover {
   background-color: plum
 }
-
-
 .container {
   padding: 1em;
   background: white;
@@ -45,12 +40,10 @@ body, html {
   font-family: helvetica, arial, sans-serif;
   margin: 10px;
 }
-
 h1 {
   font-style: italic;
   color: #ff0066;
 }
-
 button {
   display: inline-block;
   font-size: 12px;
@@ -172,7 +165,7 @@ background : conic-gradient(pink,orange,yellowgreen,cyan);
 </div>
 </h1>
 </div>
-<button onclick="chn()"> 背景色の変更 </button>
+<button onclick="changeBackground()"> 背景色の変更 </button>
 <br>
 <font color ="navy"><b><a href="https://github.com/Uchida16104/todolist/blob/main/todolist_japanese.html">ソースコード</a></b></font>
 <br>
@@ -204,7 +197,7 @@ function effect() {
 　　var audio = document.getElementById("Effect").play();
 　　effect.volume = 0.1;
 }
-function chn() {
+function changeBackground() {
 var cb = document.getElementById("bg");
 var shift=window.prompt("背景色を入力してください。");
 cb.style.background = shift;
