@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset="UTF-8" />
-<script src="http://code.jquery.com/jquery-1.7.1.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>To Do リスト</title>
+<title>To Do List</title>
 <style type = "text/css">
 body {
   font-family: helvetica, arial, sans-serif;
@@ -59,7 +58,7 @@ button {
 <div id="dispArea" class="container">
 <h1 class="title" style="text-align:left;">
 <div style="color:black;font-weight:bold;text-align:left;">
-To do リスト
+To do list
 <style type = "text/css">
 div.right {
     text-align: right; 
@@ -75,6 +74,19 @@ document.write(name);
 </font>
 </div>
 <br>
+<font size = "3.5" color="black" face = "MS　明朝"><div class="right">
+<a href = "./todolist_japanese.html"><font face = "Georgia" size="1" color = "green">英語ページ　→　
+</a></font></div></font>
+<br>
+<p><font size="2" face="Georgia" color="navy">下の入力ボックスにやること(+期限)を入力してください。</font></p>
+<form method="post" style="width:400px;height:200px;font-size:20px;">
+</form>
+<?php
+$sql = "SELECT * FROM Task ORDER BY DESC";
+print $sql;
+?>
+<font><input class="js-addTask-value" type="text"  value="" placeholder="ここに全角22文字以内で入力してください。" style="width:350px;height:200px;font-size:16px;" >
+<button class="js-addTask-trigger" type="button" onclick="effect()">登録</button>
 <style type = "text/css">
 .ex1{
 line-height:0.25;
@@ -83,80 +95,30 @@ line-height:0.25;
 line-height:0.125;
 }
 </style>
-<p><font size="2" face="MS 明朝" color="indigo">やること</font></p>
-  <button id="add">追加</button>
-  <button id="reset">リセット</button>
-  <ul id="foo"></ul>
-  <script>
-  var initData  = ["項目1", "項目2"];
-  var listString = "";
-
-  function initialize(){
-    $.each(initData, function(key, value) {
-      $("#foo").prepend('<li><input type ="text" name ="tasks" style="width:330px;height:190px;font-size:16px;"  placeholder="ここに全角34文字以内で入力してください。" /><button class="delete">削除</button></li>');
-    });
-  }
-
-  if (localStorage.getItem("foo")) {
-    $("#foo").html(localStorage.getItem("foo"));
-  } else {
-    initialize();
-  }
-
-  $("#add").click(function() {
-    $("#foo").prepend('<li><input type ="text" name ="tasks" style="width:330px;height:190px;font-size:16px;"  placeholder="ここに全角34文字以内で入力してください。" /><button class="delete">削除</button></li>');
-    localStorage.setItem("foo", $("#foo").html());
-  });
-
-  $("#foo").on("keyup", ":input", function(){
-    $.each($("input"), function(key, input){
-      $(input).attr("value", $("<div/>").text(input.value).html());
-    });
-    localStorage.setItem("foo", $("#foo").html());
-  });
-
-  $("#foo").on("click", ".delete", function() {
-    $(this).parent().remove();
-    localStorage.setItem("foo", $("#foo").html());
-  });
-
-  $("#reset").click(function(){
-    $("#foo").empty();
-    initialize();
-    localStorage.setItem("foo", $("#foo").html());
-  });
-function effect() {
-　　var audio = document.getElementById("Effect").play();
-　　effect.volume = 0.1;
-}
-function changeBackgroundColor() {
-var cbc = document.getElementById("bg");
-var shift=window.prompt("背景色を入力してください。");
-cbc.style.background = shift;
-}
-  </script>
+<p><font size="2" face="MS　明朝" color="indigo">タスク</font></p>
+<font color="brown"><ul class="todo js-addTask-target"></ul></font>
 <br>
 <b><hr noshade></b>
-<p class = "ex1"><font size="1.5" face="MS 明朝" color="navy"><div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
-<a style="cursor:pointer;">▼使い方（←ここをクリックしてください。）</a></div></font></p>
+<p class = "ex1"><font size="1.5" face="MS　明朝" color="navy"><div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+<a style="cursor:pointer;">▼How to use ( <- Please click here. )</a></div></font></p>
 <div id="open" style="display:none;clear:both;">
-<p class = "ex1"><font size="1.5" face="MS 明朝" color="navy">1.「やること」の上にある入力ボックスにやる事を入力し、「登録」ボタンをクリックすることでBGMが流れます。</font></p>
+<p class = "ex1"><font size="1.5" face="MS　明朝" color="navy">1.入力ボックスにやる事を入力し、「入力」ボタンをクリックすることでBGMが流れます。</font></p>
 <br>
-<p class = "ex1"><font size="1.5" face="MS 明朝" color="navy">同時に「やること」の下に入力したテキストが表示されます。</font></p>
+<p class = "ex1"><font size="1.5" face="MS　明朝" color="navy">同時に「タスク」の下に入力したテキストが表示されます。</font></p>
 <br>
-<p class = "ex1"><font size="1" face="MS 明朝" color="navy">※ページの更新やタブを削除してしまうと入力したデータが自動で削除されてしまうため、その前にあらかじめスクリーンショットや pdf 出力でデータを保存しておくことをおすすめします。</font></p>
+<p class = "ex1"><font size="1" face="MS　明朝" color="navy">※ページを更新したりタブを閉じると、入力したデータがリセットされるため、その前にあらかじめページをスクリーンショットでとっておくか、pdf出力しておくことをおすすめします。</font></p>
 <br>
-<p class = "ex1"><font size="1.5" face="MS 明朝" color="navy">2.表示されたやることリストのテキストの隣にある「削除」ボタンをクリックすることでやることが削除されます。</font></p>
+<p class = "ex1"><font size="1.5" face="MS　明朝" color="navy">2.「削除」ボタンをクリックすることでやることが削除されます。</font></p>
 <br>
-<p class = "ex1"><font size="1.5" face="MS 明朝" color="navy">3.「ソースコード」の上にある「背景色の変更」ボタンをクリックすることで背景色が変更できます。</font></p>
-<p class = "ex1"><font size="1" face="MS 明朝" color="navy">(例1)  #ff0000</font></p>
-<p class = "ex1"><font size="1" face="MS 明朝" color="navy">(例2)  linear-gradient(yellowgreen,purple)</font></p>
-<p class = "ex1"><font size="1" face="MS 明朝" color="navy">(例3)  conic-gradient(#ffa500,#00ffff)</font></p>
-<p class = "ex1"><font size="1" face="MS 明朝" color="navy">(例4)  radial-gradient(yellow,green)</font></p>
-<p class = "ex1"><font size="1" face="MS 明朝" color="navy">(例5)  repeating-linear-gradient(#ff00ff,transparent 5px,#4b0082 10px)</font></p>
-<p class = "ex1"><font size="1" face="MS 明朝" color="navy">など...</font></p>
+<p class = "ex1"><font size="1.5" face="MS　明朝" color="navy">3.「背景色の変更」ボタンをクリックすることで背景色が変更できます。</font></p>
+<p class = "ex1"><font size="1" face="MS　明朝" color="navy">(Ex1)  #ff0000</font></p>
+<p class = "ex1"><font size="1" face="MS　明朝" color="navy">(Ex2)  linear-gradient(yellowgreen,purple)</font></p>
+<p class = "ex1"><font size="1" face="MS　明朝" color="navy">(Ex3)  conic-gradient(#ffa500,#00ffff)</font></p>
+<p class = "ex1"><font size="1" face="MS　明朝" color="navy">(Ex4)  radial-gradient(yellow,green)</font></p>
+<p class = "ex1"><font size="1" face="MS　明朝" color="navy">(Ex5)  repeating-linear-gradient(#ff00ff,transparent 5px,#4b0082 10px)</font></p>
+<p class = "ex1"><font size="1" face="MS　明朝" color="navy">など...</font></p>
 <br>
-<p class = "ex1"><font size="0.5" face="Georgia" color="navy"><a href="https://github.com/Uchida16104/todolist/blob/main/README_japanese.md">詳細→</a></font></p>
+<p class = "ex1"><font size="0.5" face="MS　明朝" color="navy"><a href="https://github.com/Uchida16104/todolist/blob/main/README_japanese.md"> 詳細　→ </a></font></p>
 <br>
 </div>
 <hr>
@@ -176,27 +138,20 @@ body {
 background-color: rgba(255,0,0,0);
 text-align: left;
 }
-button:active {
-background : conic-gradient(pink,orange,yellowgreen,cyan);
-}
-input[type="text"] {
-border: 5px solid #000000;
-width: 200px;
-height: 100px;
-font-size : 20px;
-word-wrap:break-word;
-}
-input[type="text"] {
+li {
 border: 5px solid #000000;
 width: 400px;
 height: 200px;
 word-wrap:break-word;
 }
+button:active {
+background : conic-gradient(pink,orange,yellowgreen,cyan);
+}
 </style>
 </head>
 <body onload="jikoku()">
 <form name="F1" action="#">
-<input type="text" name="T1" size=10 style="width:175px; height:25px;">
+<input type="text" name="T1" size=20>
 </form>
 <form>
 <span style "color: #ff0000">
@@ -210,10 +165,43 @@ word-wrap:break-word;
 </div>
 </h1>
 </div>
-<button onclick="changeBackgroundColor()"> 背景色の変更 </button>
+<button onclick="changeBackground()"> 背景色の変更 </button>
 <br>
 <font color ="navy"><b><a href="https://github.com/Uchida16104/todolist/blob/main/todolist_japanese.html">ソースコード</a></b></font>
 <br>
 </header>
+<script>
+'use strict';
+const addTaskTrigger = document.getElementsByClassName('js-addTask-trigger')[0];
+const addTaskTarget = document.getElementsByClassName('js-addTask-target')[0];
+const addTaskValue = document.getElementsByClassName('js-addTask-value')[0];
+const removeTask = removeButton => {
+  const targetTask = removeButton.closest('li');
+  addTaskTarget.removeChild(targetTask);
+};
+const addTask = task => {
+  const listItem = document.createElement('li');
+  const removeButton = document.createElement('button');
+  removeButton.innerText = '削除';
+  removeButton.addEventListener('click', () => removeTask(removeButton));
+  listItem.innerText = task;
+  listItem.append(removeButton);
+  addTaskTarget.appendChild(listItem);
+};
+addTaskTrigger.addEventListener('click', event => {
+  const task = addTaskValue.value;
+  addTask(task);
+  addTaskValue.value = '';
+});
+function effect() {
+　　var audio = document.getElementById("Effect").play();
+　　effect.volume = 0.1;
+}
+function changeBackground() {
+var cb = document.getElementById("bg");
+var shift=window.prompt("背景色を入力してください。");
+cb.style.background = shift;
+}
+</script>
 </body>
 </html>
