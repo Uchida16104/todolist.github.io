@@ -186,7 +186,9 @@ const addTask = task => {
   listItem.append(removeButton);
   addTaskTarget.appendChild(listItem);
 };
-localStorage.getItem('js-addTask-target');
+var key = addTaskTarget;
+var data = localStorage.getItem(key);
+localStorage.setItem(key, data);
 addTaskTrigger.addEventListener('click', event => {
   const task = addTaskValue.value;
   addTask(task);
