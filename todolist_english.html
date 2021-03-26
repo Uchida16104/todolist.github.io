@@ -188,7 +188,7 @@ const addTask = task => {
   listItem.innerText = task;
   listItem.append(removeButton);
   addTaskTarget.appendChild(listItem);
-  listItem.setAttribute('id', 'td');
+  li.setAttribute('id', 'td');
 };
 addTaskTrigger.addEventListener('click', event => {
   const task = addTaskValue.value;
