@@ -85,7 +85,7 @@ document.write(name);
 $sql = "SELECT * FROM Task ORDER BY DESC";
 print $sql;
 ?>
-<font><input class="js-addTask-value" type="text"  value="" placeholder="Please enter up to 41 characters here." style="width:350px;height:200px;font-size:10px;" >
+<font><input class="js-addTask-value" type="text"  value="" placeholder="Please enter up to 41 characters here." style="width:350px;height:200px;font-size:16px;" >
 <button class="js-addTask-trigger" type="button" onclick="effect()">Register</button>
 <style type = "text/css">
 .ex1{
@@ -102,11 +102,13 @@ line-height:0.125;
 <p class = "ex1"><font size="1.5" face="Georgia" color="navy"><div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
 <a style="cursor:pointer;">▼How to use</a></div></font></p>
 <div id="open" style="display:none;clear:both;">
-<p class = "ex1"><font size="1.5" face="Georgia" color="navy">1.By clicking on the "Register" button, the background music will be played.
+<p class = "ex1"><font size="1.5" face="Georgia" color="navy">1.Enter your tasks in the input box above "Tasks" and click on the "Register" button to play the background music.</font></p>
 <br>
-At the same time, the text you have entered will appear under "Tasks".</font></p>
+<p class = "ex1"><font size="1.5" face="Georgia" color="navy">At the same time, the text you have entered will appear under "Tasks".</font></p>
 <br>
-<p class = "ex1"><font size="1.5" face="Georgia" color="navy">2.Clicking on the "Delete" button will delete the task.</font></p>
+<p class = "ex1"><font size="1" face="Georgia" color="navy">*Refreshing the page or deleting the tab will automatically delete the data you have entered, so we recommend that you save your data as a screenshot or pdf output beforehand.</font></p>
+<br>
+<p class = "ex1"><font size="1.5" face="Georgia" color="navy">2.You can delete a task by clicking on the "Delete" button next to the text of the task list that appears.</font></p>
 <br>
 <p class = "ex1"><font size="1.5" face="Georgia" color="navy">3.You can change the background color by clicking on the "Change background color" button.</font></p>
 <p class = "ex1"><font size="1" face="Georgia" color="navy">(Ex1)  #ff0000</font></p>
