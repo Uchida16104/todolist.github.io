@@ -78,15 +78,14 @@ document.write(name);
 <a href = "./todolist_japanese.html"><font face = "Georgia" size="1" color = "green">Japanese page -> 
 </a></font></div></font>
 <br>
-<p><font size="2" face="Georgia" color="navy">Please enter the things to do (+ deadlines) in the input box below.</font></p>
+<p><font size="2" face="Georgia" color="navy">Please enter the tasks (+ deadlines) in the input box below.</font></p>
 <form method="post" style="width:400px;height:200px;font-size:20px;">
 </form>
 <?php
 $sql = "SELECT * FROM Task ORDER BY DESC";
 print $sql;
 ?>
-<font><input id="task" class="js-addTask-value" type="text"  value="   Deadline : " style="width:350px;height:200px;font-size:10px;" >
-<label for="task">Please enter up to 41 characters here.</label>
+<font><input class="js-addTask-value" type="text"  value="" placeholder="Please enter up to 41 characters here." style="width:350px;height:200px;font-size:10px;" >
 <button class="js-addTask-trigger" type="button" onclick="effect()">Register</button>
 <style type = "text/css">
 .ex1{
